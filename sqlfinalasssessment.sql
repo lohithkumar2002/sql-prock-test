@@ -30,7 +30,7 @@ INSERT INTO artists (artist_id, name, country, birth_year) VALUES
 (2, 'Pablo Picasso', 'Spain', 1881),
 (3, 'Leonardo da Vinci', 'Italy', 1452),
 (4, 'Claude Monet', 'France', 1840),
-(5, 'Salvador Dalí', 'Spain', 1904);
+(5, 'Salvador DalÃ­', 'Spain', 1904);
 
 INSERT INTO artworks (artwork_id, title, artist_id, genre, price) VALUES
 (1, 'Starry Night', 1, 'Post-Impressionism', 1000000.00),
@@ -360,14 +360,16 @@ order_date date not null,
 order_quantity int not null,
 order_total_amount decimal(10,2) not null
 )
-create table injection
+create table info
 (
+fileid int not null,
 id int not null,
 productid int  not null,
 orderid int not null,
 foreignkey(id) references customers(id),
 foreignkey(productid) references products(productid),
-foreignkey(orderid) references orders(orderid)
+foreignkey(orderid) references orders(orderid),
+    primarykey(fileid)
 )
 
 
